@@ -12,4 +12,8 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
   }
 
+  clickFunction() {
+    alert('clicked me!');
+  }
 }
+

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {NgModel} from '@angular/forms';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -6,11 +7,8 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './signing.component.html',
   styleUrls: ['./signing.component.css']
 })
-export class SigningComponent implements OnInit {
+export class SigningComponent  {
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+  log(x: NgModel): void { console.log(x); }
 
 }

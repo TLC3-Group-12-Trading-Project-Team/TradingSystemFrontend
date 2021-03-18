@@ -4,7 +4,7 @@
   <input id="firstName" required minlength="3" maxlength="10" ngModel name="firstName" #firstName="ngModel" (change)="log(firstName)" class="form-control" type="text">
      <div class="alert alert-danger" *ngIf="firstName.touched && !firstName.valid">
        <div *ngIf="firstName.errors.required">First Name is required</div>
-       <div *ngIf="firstName.errors.minlength">First Name should have a minimum of {{ firstName.errors.minlength.requiredLength}}</div>
+       <div *ngIf="firstName.errors.minlength">First Name should have a minimum of {{ firstName.errors.minlength}}</div>
      </div>
    </div>
   <div class="form-group">
@@ -12,7 +12,7 @@
     <input id="lastName" required minlength="3" maxlength="10" ngModel name="lastName" #lastName="ngModel" (change)="log(lastName)" class="form-control" type="text">
     <div class="alert alert-danger" *ngIf="lastName.touched && !lastName.valid">
       <div *ngIf="lastName.errors.required">Last Name is required</div>
-      <div *ngIf="lastName.errors.minlength">Last Name should have a minimum of {{ lastName.errors.minlength.requiredLength}}</div>
+      <div *ngIf="lastName.errors.minlength">Last Name should have a minimum of {{ lastName.errors.minlength}}</div>
     </div>
   </div>
   <div class="form-group">
@@ -21,6 +21,15 @@
     <div class="alert alert-danger" *ngIf="email.touched && !email.valid">
       <div *ngIf="email.errors.required">Email is required</div>
 <!--      <div *ngIf="email.errors.minlength">First Name should have a minimum of {{ email.errors.minlength.requiredLength}}</div>-->
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input id="password" required minlength="3" maxlength="10" ngModel name="password" #password="ngModel" (change)="log(password)" class="form-control" type="password">
+    <div class="alert alert-danger" *ngIf="password.touched && !password.valid">
+      <div *ngIf="email.errors.required">Email is required</div>
+            <div *ngIf="password.errors.minlength">First Name should have a minimum of {{ password.errors.minlength}} characters.</div>
     </div>
   </div>
   <button class="btn btn-primary">Submit</button>

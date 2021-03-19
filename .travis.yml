@@ -8,7 +8,7 @@ before_script:
   - npm install -g @angular/cli
 
 script:
-  - ng lint
+  # - ng lint
   - ng build --prod --base-href http://trade-project-frontend.s3-website-eu-west-1.amazonaws.com
 
 

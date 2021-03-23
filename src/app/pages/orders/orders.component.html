@@ -98,57 +98,21 @@
         <div class="card-header bg-transparent">
           <div class="row align-items-center">
             <div class="col">
-              <h6 class="text-uppercase text-light ls-1 mb-1">Overview</h6>
-              <h2 class="text-white mb-0">Products</h2>
+              <h6 class="text-uppercase text-light ls-1 mb-1">Make An Order</h6>
+              <h2 class="text-white mb-0">Products / Standing Orders</h2>
             </div>
             <div class="col">
               <ul class="nav nav-pills justify-content-end">
                 <li class="nav-item mr-2 mr-md-0" data-toggle="chart" data-target="#chart-sales"  (click)="data=datasets[0];updateOptions()">
                   <a href="javascript:void(0)" class="nav-link py-2 px-3" [ngClass]="{'active':clicked===true}" data-toggle="tab" (click)="clicked=true;clicked1=false">
-                    <span class="d-none d-md-block">MSFT</span>
-                    <span class="d-md-none">M</span>
+                    <span class="d-none d-md-block"> + Create</span>
+                    <span class="d-md-none">+</span>
                   </a>
                 </li>
                 <li class="nav-item" data-toggle="chart" data-target="#chart-sales"  (click)="data=datasets[1];updateOptions()">
                   <a href="javascript:void(0)" class="nav-link py-2 px-3" [ngClass]="{'active':clicked1===true}" data-toggle="tab" (click)="clicked=false;clicked1=true">
-                    <span class="d-none d-md-block">NFLX</span>
-                    <span class="d-md-none">N</span>
-                  </a>
-                </li>
-                <li class="nav-item mr-2 mr-md-0" data-toggle="chart" data-target="#chart-sales"  (click)="data=datasets[0];updateOptions()">
-                  <a href="javascript:void(0)" class="nav-link py-2 px-3" [ngClass]="{'active':clicked===true}" data-toggle="tab" (click)="clicked=true;clicked1=false">
-                    <span class="d-none d-md-block">GOOGL</span>
-                    <span class="d-md-none">G</span>
-                  </a>
-                </li>
-                <li class="nav-item" data-toggle="chart" data-target="#chart-sales"  (click)="data=datasets[1];updateOptions()">
-                  <a href="javascript:void(0)" class="nav-link py-2 px-3" [ngClass]="{'active':clicked1===true}" data-toggle="tab" (click)="clicked=false;clicked1=true">
-                    <span class="d-none d-md-block">AAPL</span>
-                    <span class="d-md-none">AA</span>
-                  </a>
-                </li>
-                <li class="nav-item mr-2 mr-md-0" data-toggle="chart" data-target="#chart-sales"  (click)="data=datasets[0];updateOptions()">
-                  <a href="javascript:void(0)" class="nav-link py-2 px-3" [ngClass]="{'active':clicked===true}" data-toggle="tab" (click)="clicked=true;clicked1=false">
-                    <span class="d-none d-md-block">TSLA</span>
-                    <span class="d-md-none">T</span>
-                  </a>
-                </li>
-                <li class="nav-item" data-toggle="chart" data-target="#chart-sales"  (click)="data=datasets[1];updateOptions()">
-                  <a href="javascript:void(0)" class="nav-link py-2 px-3" [ngClass]="{'active':clicked1===true}" data-toggle="tab" (click)="clicked=false;clicked1=true">
-                    <span class="d-none d-md-block">IBM</span>
-                    <span class="d-md-none">I</span>
-                  </a>
-                </li>
-                <li class="nav-item mr-2 mr-md-0" data-toggle="chart" data-target="#chart-sales"  (click)="data=datasets[0];updateOptions()">
-                  <a href="javascript:void(0)" class="nav-link py-2 px-3" [ngClass]="{'active':clicked===true}" data-toggle="tab" (click)="clicked=true;clicked1=false">
-                    <span class="d-none d-md-block">ORCL</span>
-                    <span class="d-md-none">O</span>
-                  </a>
-                </li>
-                <li class="nav-item" data-toggle="chart" data-target="#chart-sales"  (click)="data=datasets[1];updateOptions()">
-                  <a href="javascript:void(0)" class="nav-link py-2 px-3" [ngClass]="{'active':clicked1===true}" data-toggle="tab" (click)="clicked=false;clicked1=true">
-                    <span class="d-none d-md-block">AMZN</span>
-                    <span class="d-md-none">AM</span>
+                    <span class="d-none d-md-block"> - Cancel</span>
+                    <span class="d-md-none">-</span>
                   </a>
                 </li>
               </ul>
@@ -157,25 +121,98 @@
         </div>
         <div class="card-body">
           <!-- Chart -->
-<!--          <div class="chart">-->
-<!--            &lt;!&ndash; Chart wrapper &ndash;&gt;-->
-<!--            <canvas id="chart-sales" class="chart-canvas"></canvas>-->
-<!--          </div>-->
         </div>
       </div>
-    </div>
-    <div class="col-xl-4">
       <div class="card shadow">
-        <div class="card-header bg-transparent">
+        <div class="card-header border-0">
           <div class="row align-items-center">
             <div class="col">
-              <h6 class="text-uppercase text-muted ls-1 mb-1">Performance</h6>
-              <h2 class="mb-0">Standing orders</h2>
+              <h3 class="mb-0">Standing Orders</h3>
+            </div>
+            <div class="col text-right">
+              <p>Count: #</p>
+              <!--              <a href="#!" class="btn btn-sm btn-danger">Cancel</a>-->
             </div>
           </div>
         </div>
-        <div class="card-body">
-          <p> There are no standing offers yet</p>
+        <div class="table-responsive">
+          <!-- Projects table -->
+          <div class="table-responsive">
+            <!-- Projects table -->
+            <table class="table align-items-center table-flush">
+              <thead class="thead-light">
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Worth</th>
+                <th scope="col">Stocks</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <th scope="row">
+                  Netflix
+                </th>
+                <td>
+                  $18300
+                </td>
+                <td>
+                  <a href="#!" class="btn btn-sm btn-danger"> - Cancel</a>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br/>
+    <div class="col-xl-4">
+      <div class="card shadow">
+        <div class="card-header border-0">
+          <div class="row align-items-center">
+            <div class="col">
+              <h3 class="mb-0">History</h3>
+            </div>
+            <div class="col text-right">
+              <a href="#!" class="btn btn-sm btn-primary">See all</a>
+            </div>
+          </div>
+        </div>
+        <div class="table-responsive">
+          <!-- Projects table -->
+          <table class="table align-items-center table-flush">
+            <thead class="thead-light">
+            <tr>
+              <th scope="col">Orders</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Price</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <th scope="row">
+                Facebook (BUY)
+              </th>
+              <td>
+                1,480
+              </td>
+              <td>
+                $1.50
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">
+                NetFlix (Sell)
+              </th>
+              <td>
+                1,280
+              </td>
+              <td>
+                $1.20
+              </td>
+            </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>

@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormBuilder, FormGroup } from "@angular/forms";
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 
 
@@ -14,7 +15,8 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   constructor(
     public fb: FormBuilder,
-    private http: HttpClient
+    private http: HttpClient,
+    private router: Router
   ) {
     this.form = this.fb.group({
       email: [''],
@@ -33,9 +35,24 @@ export class LoginComponent implements OnInit, OnDestroy {
     formData.append("password", this.form.get('password').value);
 
     this.http.post('http://18.193.123.168:25000', formData).subscribe(
-      (response) => console.log(response),
-      (error) => console.log(error)
+      (response) => this.loginAction(response),
+      (error) => this.promptOnError(error),
+
     )
+  }
+
+  promptOnError(error) {
+    console.log(error)
+    this.router.navigate(['dashboard']); //Replace with toast
+  }
+
+  loginAction(response) {
+    console.log(response)
+    //Check status code if Successful 200
+    //Find a way to store info
+    
+    //redirect to dashboard
+    this.router.navigate(['dashboard']);
   }
 
 }

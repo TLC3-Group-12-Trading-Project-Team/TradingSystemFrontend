@@ -34,15 +34,16 @@ export class LoginComponent implements OnInit, OnDestroy {
     formData.append("email", this.form.get('email').value);
     formData.append("password", this.form.get('password').value);
 
-    this.http.post('http://18.193.123.168:25000', formData).subscribe(
+    this.http.post('http://18.159.170.1:25000', formData).subscribe(
       (response) => this.loginAction(response),
-      (error) => this.promptOnError(error),
+      (error) => this.promptOnError(error)
 
     )
   }
 
   promptOnError(error) {
     console.log(error)
+    alert("Login Failed ooo Elijah, Bestie, ")
     this.router.navigate(['dashboard']); //Replace with toast
   }
 
@@ -50,9 +51,9 @@ export class LoginComponent implements OnInit, OnDestroy {
     console.log(response)
     //Check status code if Successful 200
     //Find a way to store info
-    
+
     //redirect to dashboard
-    this.router.navigate(['dashboard']);
+    // this.router.navigate(['dashboard']);
   }
 
 }

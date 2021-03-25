@@ -21,6 +21,7 @@ export class OrdersComponent implements OnInit {
   public salesChart;
   public clicked: boolean = true;
   public clicked1: boolean = false;
+  public copy: string;
 
   ngOnInit() {
 

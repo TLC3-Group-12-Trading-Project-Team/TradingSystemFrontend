@@ -3,6 +3,7 @@ import { CommonModule, } from '@angular/common';
 import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 
+import { ClientLayoutComponent } from './layouts/client-layout/client-layout.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
 
@@ -11,6 +12,15 @@ const routes: Routes =[
     path: '',
     redirectTo: 'login',
     pathMatch: 'full',
+  }, {
+    path: '',
+    component: ClientLayoutComponent,
+    children: [
+      {
+        path: '',
+        loadChildren: './layouts/client-layout/client-layout.module#ClientLayoutModule'
+      }
+    ]
   }, {
     path: '',
     component: AdminLayoutComponent,

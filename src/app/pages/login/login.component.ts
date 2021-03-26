@@ -30,11 +30,9 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   submitForm() {
     // console.log("Submitted");
-    var formData: any = new FormData();
-    formData.append("email", this.form.get('email').value);
-    formData.append("password", this.form.get('password').value);
-
-    this.http.post('http://18.159.170.1:25000', formData).subscribe(
+    console.log(this.form.get('email').value);
+    console.log(this.form.get('password').value)
+    this.http.post('http://18.159.170.1:25000/client/login', { email: this.form.get('email').value, password: this.form.get('password').value }).subscribe(
       (response) => this.loginAction(response),
       (error) => this.promptOnError(error)
 
@@ -42,18 +40,31 @@ export class LoginComponent implements OnInit, OnDestroy {
   }
 
   promptOnError(error) {
+    // log Error and maybe send to reporting service
     console.log(error)
-    alert("Login Failed ooo Elijah, Bestie, ")
-    this.router.navigate(['dashboard']); //Replace with toast
+    // Alert for Error
+    alert("Login Failed ooo Elijah, Bestie and Clement, ") //Replace with toast
   }
 
   loginAction(response) {
-    console.log(response)
     //Check status code if Successful 200
-    //Find a way to store info
+    console.log(response.code);
+    if(response.code == 200){
+      //Find a way to store info
+      console.log(response)
 
-    //redirect to dashboard
-    // this.router.navigate(['dashboard']);
+      let key='userData';
+      localStorage.setItem(key, JSON.stringify(response));
+
+      // let getLocalDataItem = JSON.parse(localStorage.getItem(key));
+      // console.log(getLocalDataItem);
+
+      //redirect to dashboard
+      this.router.navigate(['dashboard']);
+    } else {
+      this.promptOnError(response);
+    }
+
   }
 
 }

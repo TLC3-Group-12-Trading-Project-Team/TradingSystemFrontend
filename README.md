@@ -109,10 +109,10 @@ argon-dashboard-angular
 │   │   │   ├── admin-layout
 │   │   │   │   ├── admin-layout.component.html
 │   │   │   │   ├── admin-layout.component.scss
-│   │   │   │   ├── admin-layout.component.spec.ts
-│   │   │   │   ├── admin-layout.component.ts
-│   │   │   │   ├── admin-layout.module.ts
-│   │   │   │   └── admin-layout.routing.ts
+│   │   │   │   ├── client-layout.component.spec.ts
+│   │   │   │   ├── client-layout.component.ts
+│   │   │   │   ├── client-layout.module.ts
+│   │   │   │   └── client-layout.routing.ts
 │   │   │   └── auth-layout
 │   │   │       ├── auth-layout.component.html
 │   │   │       ├── auth-layout.component.scss

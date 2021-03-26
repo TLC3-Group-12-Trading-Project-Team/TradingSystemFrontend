@@ -11,17 +11,16 @@ import {
 
 @Component({
   selector: 'app-dashboard',
-  templateUrl: './orders.component.html',
-  styleUrls: ['./orders.component.scss']
+  templateUrl: './admin-dashboard.component.html',
+  styleUrls: ['./admin-dashboard.component.scss']
 })
-export class OrdersComponent implements OnInit {
+export class AdminDashboardComponent implements OnInit {
 
   public datasets: any;
   public data: any;
   public salesChart;
   public clicked: boolean = true;
   public clicked1: boolean = false;
-  public copy: string;
 
   ngOnInit() {
 

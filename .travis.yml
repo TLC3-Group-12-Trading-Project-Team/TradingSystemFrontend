@@ -9,14 +9,8 @@ before_script:
 
 script:
   # - ng lint
-<<<<<<< Updated upstream
-  - ng build --prod --base-href http://trade-project-frontend.s3-website.eu-central-1.amazonaws.com
-  - ls 
-=======
-#  - ng build --prod --base-href http://trade-project-frontend.s3-website-eu-west-1.amazonaws.com
-  - ng build --prod --base-href http://trade-project-frontend.s3-website.eu-central-1.amazonaws.com
+  - ng build --prod --base-href http://trade-project-frontend.s3-website.eu-central-1.amazonaws.com/
   - ls
->>>>>>> Stashed changes
   - ls dist
 
 deploy:

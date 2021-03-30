@@ -28,7 +28,7 @@ export class RegisterComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
   }
 
-  CreateAccount() {
+  createAccount() {
     // console.log("Submitted");
      this.http.post('http://18.159.170.1:25000/client/signup', { firstname: this.form.get('firstname').value, lastname: this.form.get('lastname').value, email: this.form.get('email').value, password: this.form.get('password').value }).subscribe(
       (response) => this.signupAction(response),
@@ -60,7 +60,7 @@ export class RegisterComponent implements OnInit, OnDestroy {
       console.log(response)
 
       let key='userData';
-      localStorage.setItem(key, JSON.stringify(response));
+      localStorage.setItem(key, JSON.stringify(response.data));
 
       // let getLocalDataItem = JSON.parse(localStorage.getItem(key));
       // console.log(getLocalDataItem);

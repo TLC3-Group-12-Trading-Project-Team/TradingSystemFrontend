@@ -1,95 +1,4 @@
-<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
-  <div class="container-fluid">
-    <div class="header-body">
-      <!-- Card stats -->
-      <div class="row">
-        <div class="col-xl-3 col-lg-6">
-          <div class="card card-stats mb-4 mb-xl-0">
-            <div class="card-body">
-              <div class="row">
-                <div class="col">
-                  <h5 class="card-title text-uppercase text-muted mb-0">Traffic</h5>
-                  <span class="h2 font-weight-bold mb-0">350,897</span>
-                </div>
-                <div class="col-auto">
-                  <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
-                    <i class="fas fa-chart-bar"></i>
-                  </div>
-                </div>
-              </div>
-              <p class="mt-3 mb-0 text-muted text-sm">
-                <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
-                <span class="text-nowrap">Since last month</span>
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-3 col-lg-6">
-          <div class="card card-stats mb-4 mb-xl-0">
-            <div class="card-body">
-              <div class="row">
-                <div class="col">
-                  <h5 class="card-title text-uppercase text-muted mb-0">New users</h5>
-                  <span class="h2 font-weight-bold mb-0">2,356</span>
-                </div>
-                <div class="col-auto">
-                  <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
-                    <i class="fas fa-chart-pie"></i>
-                  </div>
-                </div>
-              </div>
-              <p class="mt-3 mb-0 text-muted text-sm">
-                <span class="text-danger mr-2"><i class="fas fa-arrow-down"></i> 3.48%</span>
-                <span class="text-nowrap">Since last week</span>
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-3 col-lg-6">
-          <div class="card card-stats mb-4 mb-xl-0">
-            <div class="card-body">
-              <div class="row">
-                <div class="col">
-                  <h5 class="card-title text-uppercase text-muted mb-0">Sales</h5>
-                  <span class="h2 font-weight-bold mb-0">924</span>
-                </div>
-                <div class="col-auto">
-                  <div class="icon icon-shape bg-yellow text-white rounded-circle shadow">
-                    <i class="fas fa-users"></i>
-                  </div>
-                </div>
-              </div>
-              <p class="mt-3 mb-0 text-muted text-sm">
-                <span class="text-warning mr-2"><i class="fas fa-arrow-down"></i> 1.10%</span>
-                <span class="text-nowrap">Since yesterday</span>
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-3 col-lg-6">
-          <div class="card card-stats mb-4 mb-xl-0">
-            <div class="card-body">
-              <div class="row">
-                <div class="col">
-                  <h5 class="card-title text-uppercase text-muted mb-0">Performance</h5>
-                  <span class="h2 font-weight-bold mb-0">49,65%</span>
-                </div>
-                <div class="col-auto">
-                  <div class="icon icon-shape bg-info text-white rounded-circle shadow">
-                    <i class="fas fa-percent"></i>
-                  </div>
-                </div>
-              </div>
-              <p class="mt-3 mb-0 text-muted text-sm">
-                <span class="text-success mr-2"><i class="fas fa-arrow-up"></i> 12%</span>
-                <span class="text-nowrap">Since last month</span>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="header bg-gradient-danger pb-5 pt-5 pt-md-8">
 </div>
 <div class="container-fluid mt--7">
   <div class="row">
@@ -103,23 +12,47 @@
             </div>
             <div class="col">
               <ul class="nav nav-pills justify-content-end">
-                <li class="nav-item mr-2 mr-md-0" data-toggle="chart" data-target="#chart-sales"  (click)="data=datasets[0];updateOptions()">
+                <li class="nav-item mr-2 mr-md-0" data-toggle="chart" data-target="#chart-sales"  (click)="open(portfolioContent)">
                   <a href="javascript:void(0)" class="nav-link py-2 px-3" [ngClass]="{'active':clicked===true}" data-toggle="tab" (click)="clicked=true;clicked1=false">
                     <span class="d-none d-md-block">Add New</span>
                     <span class="d-md-none">+</span>
                   </a>
                 </li>
-                <li class="nav-item" data-toggle="chart" data-target="#chart-sales"  (click)="data=datasets[1];updateOptions()">
-                  <a href="javascript:void(0)" class="nav-link py-2 px-3" [ngClass]="{'active':clicked1===true}" data-toggle="tab" (click)="clicked=false;clicked1=true">
-                    <span class="d-none d-md-block">Manage</span>
-                    <span class="d-md-none">-</span>
-                  </a>
-                </li>
+<!--                <li class="nav-item" data-toggle="chart" data-target="#chart-sales"  (click)="data=datasets[1];updateOptions()">-->
+<!--                  <a href="javascript:void(0)" class="nav-link py-2 px-3" [ngClass]="{'active':clicked1===true}" data-toggle="tab" (click)="clicked=false;clicked1=true">-->
+<!--                    <span class="d-none d-md-block">Manage</span>-->
+<!--                    <span class="d-md-none">-</span>-->
+<!--                  </a>-->
+<!--                </li>-->
               </ul>
             </div>
           </div>
         </div>
       </div>
+      <ng-template #portfolioContent let-modal>
+        <div class="modal-header">
+          <h4 class="modal-title" id="modal-basic-title">{{newPortfolio.name}} {{newPortfolio.clientEmail}}</h4>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+            </div>
+            <div class="form-group">
+              <div class="input-group">
+                <input id="newPortfolioName" class="form-control" placeholder="Portfolio Name" name="newPortfolioName" type="text"
+                       [(ngModel)] = "newPortfolio.name">
+              </div>
+            </div>
+
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-dark" (click)="createNewPortfolio();modal.close('Save click')">Create Portfolio</button>
+        </div>
+      </ng-template>
       <div class="card shadow">
         <div class="card-body">
           <!-- Chart -->
@@ -128,21 +61,21 @@
             <table class="table align-items-center table-flush">
               <thead class="thead-light">
               <tr>
-                <th scope="col">Name</th>
-                <th scope="col">Worth</th>
+                <th scope="col" colspan="2">Name</th>
+<!--                <th scope="col">Worth</th>-->
                 <th scope="col">Stocks</th>
               </tr>
               </thead>
               <tbody>
-              <tr>
-                <th scope="row">
-                  Default
+              <tr *ngFor="let portfolio of portfolios">
+                <th scope="row" colspan="2">
+                  {{portfolio.name}}
                 </th>
+<!--                <td>-->
+<!--                  $18300-->
+<!--                </td>-->
                 <td>
-                  $18300
-                </td>
-                <td>
-                  <a href="#!" class="btn btn-sm btn-primary">View Stocks</a>
+                  <a (click) = "getPortfoliosStocks(portfolio.id)" class="btn btn-sm btn-primary">View Stocks</a>
                 </td>
               </tr>
               </tbody>
@@ -173,38 +106,18 @@
                 <th scope="col">Worth</th>
               </tr>
               </thead>
-              <tbody>
-              <tr>
+
+              <tbody >
+              <p *ngIf="activePortfolioStocks.orders == 0"> You do not have and stock in this portfolio</p>
+              <tr *ngFor="let order of activePortfolioStocks.orders">
                 <th scope="row">
-                  Facebook
+                  {{order.product}}
                 </th>
                 <td>
-                  100
+                  {{order.price}}
                 </td>
                 <td>
-                  $3000
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">
-                  Apple
-                </th>
-                <td>
-                  1000
-                </td>
-                <td>
-                  $15000
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">
-                  Netflix
-                </th>
-                <td>
-                  50
-                </td>
-                <td>
-                  $300
+                  ${{order.quantity * order.price}}
                 </td>
               </tr>
               </tbody>
@@ -223,7 +136,7 @@
               <h3 class="mb-0">Trades</h3>
             </div>
             <div class="col text-right">
-              <a href="#!" class="btn btn-sm btn-primary">Make a Trade</a>
+              <a (click)="this.router.navigate(['/Orders'])" class="btn btn-sm btn-primary">Make a Trade</a>
             </div>
           </div>
         </div>
@@ -238,80 +151,72 @@
                 <th scope="col">Portfolio</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-              <th scope="row">
-                Netflix
-              </th>
-              <td>
-                <i class="fas fa-arrow-up text-success mr-3"></i> Sell
-              </td>
-              <td>
-                23/03/2021
-              </td>
-              <td>
-                Default
-              </td>
-            </tr>
-              <tr>
+            <tbody *ngFor="let portfolio of portfolios">
+<!--            <p *ngIf="portfolios.*.orders == 0"> You do not have and stock in this portfolio</p>-->
+<!--            <b *ngFor="let portfolio of portfolios">-->
+              <tr *ngFor="let order of portfolio.orders">
                 <th scope="row">
-                  Apple
+                  {{order.product}}
                 </th>
                 <td>
-                  <i class="fas fa-arrow-down text-warning mr-3"></i> Buy
+                  <i *ngIf="order.side.toLowerCase() =='sell'" class="fas fa-arrow-up text-success mr-3"></i>
+                  <i *ngIf="order.side.toLowerCase() =='buy'" class="fas fa-arrow-down text-danger mr-3"></i>
+                  {{order.side}}
                 </td>
                 <td>
-                  23/03/2021
+                  {{order.createdAt | date:'medium'}}
                 </td>
                 <td>
-                  Default
+                  {{portfolio.name}}
                 </td>
               </tr>
+<!--            </b>-->
+
             </tbody>
           </table>
         </div>
       </div>
     </div>
-    <div class="col-xl-4">
-      <div class="card shadow">
-        <div class="card-header border-0">
-          <div class="row align-items-center">
-            <div class="col">
-              <h3 class="mb-0">Activities</h3>
-            </div>
-            <div class="col text-right">
-              <a href="#!" class="btn btn-sm btn-primary">See all</a>
-            </div>
-          </div>
-        </div>
-        <div class="table-responsive">
-          <!-- Projects table -->
-          <table class="table align-items-center table-flush">
-            <thead class="thead-light">
-              <tr>
-                <th scope="col">what happening with your portfolios</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">
-                  Traded Stock from Portfolio (Default)
-                </th>
-              </tr>
-              <tr>
-                <th scope="row">
-                  Added Stock to Portfolio (Default)
-                </th>
-              </tr>
-              <tr>
-                <th scope="row">
-                  Added New Portfolio (Default)
-                </th>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
+<!--    <div class="col-xl-4">-->
+<!--      <div class="card shadow">-->
+<!--        <div class="card-header border-0">-->
+<!--          <div class="row align-items-center">-->
+<!--            <div class="col">-->
+<!--              <h3 class="mb-0">Activities</h3>-->
+<!--            </div>-->
+<!--            <div class="col text-right">-->
+<!--              <a href="#!" class="btn btn-sm btn-primary">See all</a>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="table-responsive">-->
+<!--          &lt;!&ndash; Projects table &ndash;&gt;-->
+<!--          <table class="table align-items-center table-flush">-->
+<!--            <thead class="thead-light">-->
+<!--              <tr>-->
+<!--                <th scope="col">what happening with your portfolios</th>-->
+<!--              </tr>-->
+<!--            </thead>-->
+<!--            <tbody>-->
+<!--              <tr>-->
+<!--                <th scope="row">-->
+<!--                  Traded Stock from Portfolio (Default)-->
+<!--                </th>-->
+<!--              </tr>-->
+<!--              <tr>-->
+<!--                <th scope="row">-->
+<!--                  Added Stock to Portfolio (Default)-->
+<!--                </th>-->
+<!--              </tr>-->
+<!--              <tr>-->
+<!--                <th scope="row">-->
+<!--                  Added New Portfolio (Default)-->
+<!--                </th>-->
+<!--              </tr>-->
+<!--            </tbody>-->
+<!--          </table>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
   </div>
 </div>

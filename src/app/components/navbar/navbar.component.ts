@@ -37,6 +37,12 @@ export class NavbarComponent implements OnInit {
   }
   getName(){
     return this.UserData.firstname + ' '+ this.UserData.lastname;
-      }
+  }
+
+
+ logout() {
+    localStorage.clear();
+    this.router.navigate(["/login"]);
+  }
 
 }

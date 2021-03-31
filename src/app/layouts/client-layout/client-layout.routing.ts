@@ -11,6 +11,6 @@ import { OrdersComponent } from '../../pages/orders/orders.component';
 
 export const ClientLayoutRoutes: Routes = [
     { path: 'dashboard',      component: DashboardComponent },
-    { path: 'Portfolios',   component: PortfoliosComponent },
-    { path: 'Orders',         component: OrdersComponent }
+    { path: 'portfolios',   component: PortfoliosComponent },
+    { path: 'orders',         component: OrdersComponent }
 ];

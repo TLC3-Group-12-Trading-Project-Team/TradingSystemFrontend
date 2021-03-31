@@ -125,7 +125,7 @@
               <tr>
                 <th scope="col">Name</th>
                 <th scope="col">Worth</th>
-                <th scope="col">Stocks</th>
+                <th scope="col">Status</th>
               </tr>
               </thead>
               <tbody *ngFor="let order of portfolio.orders">
@@ -137,6 +137,11 @@
                   {{order.quantity * order.price}}
                 </td>
                 <td>
+                  <i *ngIf="order.status.toLowerCase() =='completed'" class="bg-success"></i>
+                  <i *ngIf="order.status.toLowerCase() =='open'" class="bg-primary"></i>
+                  <i *ngIf="order.status.toLowerCase() =='pending'" class="bg-warning"></i>
+
+                  {{order.status}}
                   <a href="#!" class="btn btn-sm btn-danger"> - Cancel</a>
                 </td>
               </tr>
@@ -174,7 +179,7 @@
           <div class="form-group">
             <div class="input-group">
               <div class="input-group-append">
-                <button class="btn btn-outline-secondary" (click)="recomendNewOrderPrice()" type="button"> $ </button>
+                <button class="btn btn-outline-secondary" (click)="recommendNewOrderPrice()" type="button"> $ </button>
               </div>
               <input id="orderPrice" class="form-control" placeholder="Price" name="orderPrice"
                      [(ngModel)] = "newOrder.price">

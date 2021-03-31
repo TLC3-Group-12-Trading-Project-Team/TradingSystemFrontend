@@ -155,12 +155,49 @@
             </div>
           </div>
         </div>
+<!--        <div class="card-body">-->
+<!--          &lt;!&ndash; Chart &ndash;&gt;-->
+<!--&lt;!&ndash;          <div class="chart">&ndash;&gt;-->
+<!--&lt;!&ndash;            &lt;!&ndash; Chart wrapper &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            <canvas id="chart-sales" class="chart-canvas"></canvas>&ndash;&gt;-->
+<!--&lt;!&ndash;          </div>&ndash;&gt;-->
+<!--        </div>-->
+      </div>
+      <div class="card shadow">
         <div class="card-body">
-          <!-- Chart -->
-<!--          <div class="chart">-->
-<!--            &lt;!&ndash; Chart wrapper &ndash;&gt;-->
-<!--            <canvas id="chart-sales" class="chart-canvas"></canvas>-->
-<!--          </div>-->
+          <div class="table-responsive">
+            <!-- Projects table -->
+            <table class="table align-items-center table-flush">
+              <thead class="thead-light">
+                <tr>
+                <th scope="col">Product</th>
+                <th scope="col">Last Traded</th>
+                <th scope="col">Ask Price</th>
+                <th scope="col">Bid Price</th>
+              </tr>
+              </thead>
+              <tbody>
+              <!--            <p *ngIf="portfolios.*.orders == 0"> You do not have and stock in this portfolio</p>-->
+              <!--            <b *ngFor="let portfolio of portfolios">-->
+              <tr *ngFor="let productData of marketData">
+                <th scope="row">
+                  {{productData.TICKER}}
+                </th>
+                <td>
+                  {{productData.LAST_TRADED_PRICE}}
+                </td>
+                <td>
+                  {{productData.ASK_PRICE}}
+                </td>
+                <td>
+                  {{productData.BID_PRICE}}
+                </td>
+              </tr>
+              <!--            </b>-->
+
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
@@ -198,7 +235,7 @@
               </td>
               <td>
                 <span class="badge badge-dot">
-                    <i *ngIf="order.status.toLowerCase() =='completed'" class="bg-success"></i>
+<!--                    <i *ngIf="order.status.toLowerCase() =='completed'" class="bg-success"></i>-->
                     <i *ngIf="order.status.toLowerCase() =='open'" class="bg-primary"></i>
                     <i *ngIf="order.status.toLowerCase() =='pending'" class="bg-warning"></i>
                   {{order.status}}

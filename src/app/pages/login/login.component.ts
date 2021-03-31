@@ -54,7 +54,7 @@ export class LoginComponent implements OnInit, OnDestroy {
       console.log(response)
 
       let key='userData';
-      localStorage.setItem(key, JSON.stringify(response));
+      localStorage.setItem(key, JSON.stringify(response.data));
 
       // let getLocalDataItem = JSON.parse(localStorage.getItem(key));
       // console.log(getLocalDataItem);

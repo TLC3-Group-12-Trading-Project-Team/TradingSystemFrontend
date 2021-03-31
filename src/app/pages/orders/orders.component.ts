@@ -73,7 +73,7 @@ export class OrdersComponent implements OnInit {
     ];
     this.data = this.datasets[0];
 
-    this.getPortfolios();
+    // this.getPortfolios();
     var chartOrders = document.getElementById('chart-orders');
 
     this.getPortfolios();
@@ -135,6 +135,7 @@ export class OrdersComponent implements OnInit {
 
   private successAction(response) {
     console.log(response)
+    this.getPortfolios()
     alert("New Order made Successfully")
     this.router.navigate([this.router.url]);
   }

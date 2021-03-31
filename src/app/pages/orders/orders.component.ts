@@ -34,7 +34,7 @@ export class OrdersComponent implements OnInit {
 
 
   public activePortfolio = this.UserData.portfolios[0];
-  public activePortfolioStocks = this.UserData.portfolios[1].orders;
+  public activePortfolioStocks = this.UserData.portfolios[0].orders;
 
   constructor(private modalService: NgbModal, private http: HttpClient, private router: Router) {}
 

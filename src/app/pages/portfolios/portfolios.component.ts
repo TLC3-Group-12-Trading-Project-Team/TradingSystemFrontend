@@ -30,7 +30,7 @@ export class PortfoliosComponent implements OnInit {
 
   public portfolios = this.UserData.portfolios;
   public activePortfolio = this.UserData.portfolios[0];
-  public activePortfolioStocks = this.UserData.portfolios[1].orders;
+  public activePortfolioStocks = this.UserData.portfolios[0].orders;
 
   public newPortfolio = {
     name: "",

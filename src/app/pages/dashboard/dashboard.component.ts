@@ -35,7 +35,7 @@ export class DashboardComponent implements OnInit {
   constructor(private modalService: NgbModal, private http: HttpClient, private router: Router) {}
 
   public activePortfolio = this.UserData.portfolios[0];
-  public activePortfolioStocks = this.UserData.portfolios[1].orders;
+  public activePortfolioStocks = this.UserData.portfolios[0].orders;
 
   ngOnInit() {
 

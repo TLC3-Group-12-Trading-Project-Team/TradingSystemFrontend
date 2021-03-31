@@ -34,6 +34,7 @@ export class DashboardComponent implements OnInit {
 
   constructor(private modalService: NgbModal, private http: HttpClient, private router: Router) {}
 
+  public portfolios = this.UserData.portfolios;
   public activePortfolio = this.UserData.portfolios[0];
   public activePortfolioStocks = this.UserData.portfolios[0].orders;
 
@@ -46,6 +47,7 @@ export class DashboardComponent implements OnInit {
     this.data = this.datasets[0];
 
       this.getBalance()
+      this.getPortfolios();
 
     var chartOrders = document.getElementById('chart-orders');
 
@@ -85,6 +87,19 @@ export class DashboardComponent implements OnInit {
   }
   getProfit(){
     return '0';
+  }
+
+
+  getPortfolios(){
+    // console.log("Submitted");
+    this.http.get('http://18.159.170.1:25000/portfolio/'+this.UserData.id).subscribe(
+      (response) => this.portfolios=response,
+      (error) => this.promptOnError(error)
+    );
+  }
+
+  private promptOnError(error) {
+    alert("Error Occurred, You might be having connectivity issues")
   }
 
 }

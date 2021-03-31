@@ -174,8 +174,42 @@
             </div>
           </div>
         </div>
-        <div class="card-body">
-          <p> There are no standing orders yet</p>
+        <div class="table-responsive">
+          <!-- Projects table -->
+          <table class="table align-items-center table-flush" *ngFor="let portfolio of portfolios">
+            <thead class="thead-light">
+            <tr>
+              <th scope="col">Product</th>
+              <th scope="col">Order Made</th>
+              <th scope="col">Status</th>
+            </tr>
+            </thead>
+            <tbody *ngFor="let order of portfolio.orders">
+            <!--            <p *ngIf="portfolios.*.orders == 0"> You do not have and stock in this portfolio</p>-->
+            <!--            <b *ngFor="let portfolio of portfolios">-->
+            <tr *ngIf="order.status == 'OPEN'">
+              <th scope="row">
+                {{order.product}}
+              </th>
+              <td>
+                <i *ngIf="order.side.toLowerCase() =='sell'" class="fas fa-arrow-up text-success mr-3"></i>
+                <i *ngIf="order.side.toLowerCase() =='buy'" class="fas fa-arrow-down text-danger mr-3"></i>
+                {{order.side}}
+              </td>
+              <td>
+                <span class="badge badge-dot">
+                    <i *ngIf="order.status.toLowerCase() =='completed'" class="bg-success"></i>
+                    <i *ngIf="order.status.toLowerCase() =='open'" class="bg-primary"></i>
+                    <i *ngIf="order.status.toLowerCase() =='pending'" class="bg-warning"></i>
+
+                  {{order.status}}
+                  </span>
+              </td>
+            </tr>
+            <!--            </b>-->
+
+            </tbody>
+          </table>
         </div>
       </div>
     </div>

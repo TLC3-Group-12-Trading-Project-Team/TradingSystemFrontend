@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     // log Error and maybe send to reporting service
     console.log(error)
     // Alert for Error
-    alert("Login Failed ooo Elijah, Bestie and Clement, ") //Replace with toast
+    alert("Login Failed, This may be due to Bad Credentials or connectivity issues") //Replace with toast
   }
 
   loginAction(response) {

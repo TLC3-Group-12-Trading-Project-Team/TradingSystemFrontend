@@ -26,11 +26,21 @@ export class DashboardComponent implements OnInit {
   public salesChart;
   public clicked: boolean = true;
   public clicked1: boolean = false;
+  public clicked2: boolean = false;
+  public clicked3: boolean = false;
+  public clicked4: boolean = false;
+  public clicked5: boolean = false;
+  public clicked6: boolean = false;
+  public clicked7: boolean = false;
+  public clicked8: boolean = false;
+  public clicked9: boolean = false;
+
 
 
 
   public UserData = JSON.parse(localStorage.getItem('userData'));
   public balance: number = 0;
+  public marketData;
 
   constructor(private modalService: NgbModal, private http: HttpClient, private router: Router) {}
 
@@ -39,7 +49,8 @@ export class DashboardComponent implements OnInit {
   public activePortfolioStocks = this.UserData.portfolios[0].orders;
 
   ngOnInit() {
-
+    this.getMarketData();
+    console.log(this.marketData);
     this.datasets = [
       [0, 20, 10, 30, 15, 40, 20, 60, 60],
       [0, 20, 5, 25, 10, 30, 15, 40, 40]
@@ -94,6 +105,12 @@ export class DashboardComponent implements OnInit {
     // console.log("Submitted");
     this.http.get('http://18.159.170.1:25000/portfolio/'+this.UserData.id).subscribe(
       (response) => this.portfolios=response,
+      (error) => this.promptOnError(error)
+    );
+  }
+  getMarketData(){
+    this.http.get('https://exchange.matraining.com/md').subscribe(
+      (response) => this.marketData=response,
       (error) => this.promptOnError(error)
     );
   }

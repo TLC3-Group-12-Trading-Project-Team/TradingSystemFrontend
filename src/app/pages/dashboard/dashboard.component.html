@@ -38,7 +38,7 @@
                   </div>
                 </div>
               </div>
-              <p class="mt-3 mb-0 text-muted text-sm">
+              <p class="mt-3 mb-0 text-muted text-sm" routerLinkActive="active" [routerLink]="['/portfolios']">
                 <span class="text-danger mr-2"><i class="fas fa-arrow-down"></i> Go to</span>
                 <span class="text-nowrap">Portofolios</span>
               </p>
@@ -59,7 +59,7 @@
                   </div>
                 </div>
               </div>
-              <p class="mt-3 mb-0 text-muted text-sm">
+              <p class="mt-3 mb-0 text-muted text-sm" routerLinkActive="active" [routerLink]="['/orders']">
                 <span class="text-warning mr-2"><i class="fas fa-arrow-down"></i> Go to</span>
                 <span class="text-nowrap">orders</span>
               </p>
@@ -81,8 +81,8 @@
                 </div>
               </div>
               <p class="mt-3 mb-0 text-muted text-sm">
-                <span class="text-success mr-2"><i class="fas fa-arrow-up"></i>Click</span>
-                <span class="text-nowrap">to view reports</span>
+                <span class="text-success mr-2"><i class="fas fa-arrow-up"></i>$0</span>
+                <span class="text-nowrap"> currently</span>
               </p>
             </div>
           </div>
@@ -201,7 +201,6 @@
                     <i *ngIf="order.status.toLowerCase() =='completed'" class="bg-success"></i>
                     <i *ngIf="order.status.toLowerCase() =='open'" class="bg-primary"></i>
                     <i *ngIf="order.status.toLowerCase() =='pending'" class="bg-warning"></i>
-
                   {{order.status}}
                   </span>
               </td>
